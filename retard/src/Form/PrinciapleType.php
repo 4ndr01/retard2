@@ -25,9 +25,11 @@ class PrinciapleType extends AbstractType
             ])
             ->add('Choix', ChoiceType::class, [
                 'choices' => [
-                    'Choix 1' => 'choix1',
-                    'Choix 2' => 'choix2',
-                    'Choix 3' => 'choix3',
+                    'Choix1' => `Je`,
+                    'Choix2' => 'test',
+                    'Choix3' => 'En retard suite à une série inopinée de circonstances cosmiques. Alors que je m \' efforçais de suivre les méandres du temps et de l \'espace pour arriver à l \'heure, j \'ai été pris dans un vortex temporel impromptu, me catapultant brièvement dans l \'ère des dinosaures. Après m \'être échappé de l \'ère jurassique avec l \'aide d \'un gentil stégosaure, j \'ai enfin atteint Rennes. Pardonnez mon excentrique voyage, ô vénérables enseignants, pour ce retard inhabituel. Fait à Rennes le 20-09-2023.
+',
+
                 ],
                 'placeholder' => 'Choisissez votre phrase',
             ])
