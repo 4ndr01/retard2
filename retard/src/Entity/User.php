@@ -7,14 +7,16 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-class User
+class User implements \Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: "string", length: 255,nullable: false)]
+
+    //n'est pas null
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
@@ -35,14 +37,9 @@ class User
     #[ORM\Column(length: 255)]
     private ?string $ville = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $name = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $password = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 10, scale: '0')]
-    private ?string $age = null;
+
 
     public function getId(): ?int
     {
@@ -133,39 +130,12 @@ class User
         return $this;
     }
 
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
 
-    public function setName(?string $name): static
-    {
-        $this->name = $name;
 
-        return $this;
-    }
+
 
     public function getPassword(): ?string
     {
-        return $this->password;
-    }
-
-    public function setPassword(string $password): static
-    {
-        $this->password = $password;
-
-        return $this;
-    }
-
-    public function getAge(): ?string
-    {
-        return $this->age;
-    }
-
-    public function setAge(string $age): static
-    {
-        $this->age = $age;
-
-        return $this;
+        // TODO: Implement getPassword() method.
     }
 }
