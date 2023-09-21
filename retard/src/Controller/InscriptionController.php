@@ -18,7 +18,11 @@ class InscriptionController extends AbstractController
 
     #[Route('/inscription', name: 'inscription')]
 
-    public function showForm(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
+    public function showForm(
+        Request $request,
+        UserPasswordHasherInterface $userPasswordHasher,
+        EntityManagerInterface $entityManager
+    ): Response
     {
 
         $user = new User();

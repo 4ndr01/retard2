@@ -28,7 +28,6 @@ class __TwigTemplate_3cef8b7cc1016d2ae9c30bff53b6e7ed extends Template
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
-            'javascripts' => [$this, 'block_javascripts'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -54,7 +53,8 @@ class __TwigTemplate_3cef8b7cc1016d2ae9c30bff53b6e7ed extends Template
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         ";
         // line 8
-        echo "        <style>
+        echo "        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.10.111/pdf.min.js\" integrity=\"sha512-hoZmP5l0sJQzHzkXQS3ZCj/H7bOn8JKmbHd/s2trPUoMcvPaBfLSE9/92cpwYzcXBaEtVT/aCQ9P97rkTSWqcw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
+        <style>
             body {
                 width: 100%;
                 display: flex;
@@ -67,17 +67,12 @@ class __TwigTemplate_3cef8b7cc1016d2ae9c30bff53b6e7ed extends Template
                 box-sizing: border-box;
             }
         </style>
-
-        ";
-        // line 22
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 25
-        echo "    </head>
+    </head>
     <body>
         ";
-        // line 27
+        // line 24
         $this->displayBlock('body', $context, $blocks);
-        // line 28
+        // line 25
         echo "    </body>
 </html>
 ";
@@ -108,30 +103,7 @@ class __TwigTemplate_3cef8b7cc1016d2ae9c30bff53b6e7ed extends Template
 
     }
 
-    // line 22
-    public function block_javascripts($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        // line 23
-        echo "            ";
-        echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
-        echo "
-        ";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-        
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
-
-    }
-
-    // line 27
+    // line 24
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -156,7 +128,7 @@ class __TwigTemplate_3cef8b7cc1016d2ae9c30bff53b6e7ed extends Template
 
     public function getDebugInfo()
     {
-        return array (  135 => 27,  122 => 23,  112 => 22,  93 => 5,  81 => 28,  79 => 27,  75 => 25,  73 => 22,  57 => 8,  52 => 5,  46 => 1,);
+        return array (  107 => 24,  88 => 5,  76 => 25,  74 => 24,  56 => 8,  51 => 5,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -168,6 +140,7 @@ class __TwigTemplate_3cef8b7cc1016d2ae9c30bff53b6e7ed extends Template
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.10.111/pdf.min.js\" integrity=\"sha512-hoZmP5l0sJQzHzkXQS3ZCj/H7bOn8JKmbHd/s2trPUoMcvPaBfLSE9/92cpwYzcXBaEtVT/aCQ9P97rkTSWqcw==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>
         <style>
             body {
                 width: 100%;
@@ -181,10 +154,6 @@ class __TwigTemplate_3cef8b7cc1016d2ae9c30bff53b6e7ed extends Template
                 box-sizing: border-box;
             }
         </style>
-
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
     </head>
     <body>
         {% block body %}{% endblock %}
