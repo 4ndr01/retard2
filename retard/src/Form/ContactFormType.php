@@ -36,7 +36,7 @@ class ContactFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('Previsualiser', SubmitType::class)
+            ->add('Inscription', SubmitType::class)
         ;
     }
 

@@ -22,18 +22,20 @@ class PDF
         $prenom = $formData['Prenom'];
         $nom_prenom = $prenom . ' ' . $nom;
         $image = '../public/image/signature.png';
-        $x = 50; // Position horizontale
-        $y = 200; // Position verticale
+        $x = 100; // Position horizontale
+        $y = 100; // Position verticale
         $largeur = 100;
         $hauteur = 0;
         //convertir en string
-        $choix = $formData['Choix'];
+        $choix = $formData['Excuses'];
+        $choix2=$formData['Vos_excuses'];
 
         $pdf->Cell(0,10,$sujet,0,1,'C');
 
 
         $pdf->Cell(0,0,$nom_prenom);
         $pdf->writeHTML($choix,true,false,true,false,'');
+        $pdf->writeHTML($choix2,true,false,true,false,'');
         $pdf->Image($image, $x, $y, $largeur, $hauteur);
 
 

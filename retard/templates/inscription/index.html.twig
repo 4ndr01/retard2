@@ -1,19 +1,51 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="form_container">
-    <h1>Inscription</h1>
-<form method="post">
-    {{ form_start(form) }}
-    {{ form_row(form.nom) }}
-    {{ form_row(form.prenom) }}
-    {{ form_row(form.email) }}
-    {{ form_row(form.password) }}
-    {{ form_end(form) }}
-</form>
-</div>
+    <div class="content_bloc">
+        <div class="form_container">
+            <h1>Inscription</h1>
+            <form method="post">
+                {{ form_start(form) }}
+                {{ form_row(form.nom) }}
+                {{ form_row(form.prenom) }}
+                {{ form_row(form.email) }}
+                {{ form_row(form.password) }}
+
+                {{ form_end(form) }}
+                <a href="{{ path('app_login') }}">Déjà inscrit ?</a>
+
+
+            </form>
+        </div>
+    </div>
+    <div class="picture_bloc">
+        <img src={{asset('image/singup.png')}} width="80%">
+    </div>
 
     <style>
+
+        .content_bloc,
+        .picture_bloc{
+            width:50%;
+            height: 100vh;
+
+            display: flex;
+            align-items: center;
+        }
+        .picture_bloc{
+            justify-content: center;
+        }
+
+        .form_container{
+            margin-left: 5em;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1{
+            margin-bottom: 1.5em;
+        }
 
 
         .form_container{
