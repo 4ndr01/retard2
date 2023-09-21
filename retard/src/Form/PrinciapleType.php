@@ -22,8 +22,8 @@ class PrinciapleType extends AbstractType
             ->add('Sujet', ChoiceType::class,[
                 'choices' =>[
                     'Docteur' => 'Docteur',
-                    'greve' => 'grève',
-                    'meteo' => 'météo',
+                    'Grève' => 'Grève',
+                    'Météo' => 'Météo',
                 ],
                 'placeholder' => 'Choisissez votre sujet',
             ])
@@ -44,7 +44,6 @@ class PrinciapleType extends AbstractType
 
 
                 ],
-                'placeholder' => 'Choisissez votre phrase',
             ])
             ->add('Vos_excuses', \Symfony\Component\Form\Extension\Core\Type\TextType::class,[
                 'required'=> false,
