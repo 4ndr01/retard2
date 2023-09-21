@@ -20,8 +20,6 @@ class DefaultController extends AbstractController
             return $this->redirectToRoute('principale');
         }
 
-        return $this->render('login/index.html.twig', [
-            'form' => $form->createView(),
-        ]);
+        return $this->render('home/index.html.twig', []);
     }
 }

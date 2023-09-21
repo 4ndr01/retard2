@@ -38,16 +38,6 @@ class PDF
         $pdf->writeHTML($choix2,true,false,true,false,'');
         $pdf->Image($image, $x, $y, $largeur, $hauteur);
 
-
-
-
-
-
-
-
-
-
-
         return $pdf;
     }
 
